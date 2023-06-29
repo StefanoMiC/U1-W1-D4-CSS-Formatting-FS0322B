@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+}
+
+#first-paragraph span {
+  background-color: red;
+  color: white;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  padding-block: 41px;
+  /*serve per rimuovere lo spazio che si crea tra due elementi inline-block*/
+  margin-inline: -2px;
+  /*sovrascrive l'allineamento sulla baseline del testo se presente*/
+  /* vertical-align: bottom; */
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.coral {
+  background-color: coral;
+  height: 200px;
+}
+
+.antiquewhite {
+  background-color: antiquewhite;
+  height: 50px;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+ul li {
+  display: inline-block;
+  padding-inline: 5px;
+  border-right: 1px solid black;
+}
+
+ul li.last {
+  /* reset del bordo sull'ultimo elemento a cui non serve */
+  border-right: none;
+}
+
+.boxes-container,
+ul {
+  text-align: center;
+}
+
+.block {
+  background-color: red;
+  height: 200px;
+  width: 400px;
+  margin-inline: auto;
+  /* overflow hidden taglia l'eccedenza dell'immagine che va oltre i confini del genitore */
+  overflow: hidden;
+  /* valori di overflow possono essere: 
+        visible (default),
+        hidden (nascosto o troncato, in caso di testo), 
+        scroll (permette lo scroll del contenuto ma crea scrollbar anche dove non necessarie), 
+        auto (come il precedente ma scrollbar saranno visibili solo se necessarie) */
+}
+
+.block-with-image {
+  background-image: url("https://images.unsplash.com/photo-1682687982049-b3d433368cd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
+  background-size: cover;
+  /*copre l'area dell'elemento con l'immagine in maniera proporzionale e nasconde eventuali eccedenze come fosse imopstato un overflow hidden */
+  color: white;
+  text-align: center;
+  /* queste proprietà le usiamo per resettare l'altezza fissa precedentemente impostata da .block e 
+    utilizziamo una quantità di padding adeguata, sia sopra che sotto, 
+    per espandere in altezza il contenitore e contestualmente centrare il contenuto verticalmente */
+  height: initial;
+  padding-block: 60px;
+}
+
+.block-with-gradient {
+  /* siccome l'elemento che usiamo usa anche la classe .block, avrà un colore rosso di background già impostato e 
+    con il nostro gradiente andiamo a scurire lo sfondo con un gradiente che va da nero a trasparente, 
+    rivelando a destra il colore rosso di background precedentemente impostato */
+  background-image: linear-gradient(90deg, black, transparent);
+}
+
+.coral span {
+  /* rimuove l'elemento, non viene più renderizzato */
+  /* display: none; */
+  /* nasconde visivamente l'elemento ma il suo spazio nella pagina viene preservato */
+  visibility: hidden;
+  /* anche questo nasconde visivamente l'elemento ma il suo spazio nella pagina viene preservato */
+  /* opacity: 0; */
+}
